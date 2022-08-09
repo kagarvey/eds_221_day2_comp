@@ -1,0 +1,29 @@
+---
+title: "Day 2 Comp Session"
+format: html
+editor: visual
+execute: 
+  warning: false
+  message: false 
+---
+
+```{r}
+dogs <- c("teddy","khora","banjo","tallie")
+cats<- c("creamsickle wolf", "14.2,", "3L")
+years<- c(3, 5, 8, 10)
+
+## is. asks questions "is this this"
+## as. gives a command "make this this"
+
+is.numeric(years)
+
+
+
+dog_food <- c(teddy="purina", khora="alpo", waffle= "fancy feast")
+
+dog_food 
+
+dog_food[2]
+
+dog_food
+```
