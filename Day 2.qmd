@@ -27,3 +27,120 @@ dog_food[2]
 
 dog_food
 ```
+
+```{r}
+cars <- c("blue","orange","white")
+cars[1]
+
+i <-3 
+cars[i]
+
+
+## could also do sequence:
+## i <- seq(1:2)
+## cars[i]
+
+## overriding white to yellow
+cars[3] <-"yellow"
+cars
+
+```
+
+Matrices
+
+```{r}
+## make vector then wrap by specifying rows and how you want them
+fish_size <-matrix(c(12,14,18,20), ncol = 2, nrow = 2, byrow=FALSE)
+fish_size 
+
+class(fish_size)
+typeof(fish_size)
+
+## example indexing
+fish_size[1,2]
+fish_size[2,1]
+
+
+## what happens if we create a matrix with different types of data
+fish_type <- matrix(c(12,"trout",18,13L), ncol = 2, nrow = 2, byrow=FALSE)
+
+class(fish_type)
+
+
+typeof(fish_type)
+
+fish_type
+
+fish_size[2,] ## second row but both columns when you index w a blank
+fish_size[,1] ## everything in every row but first column
+```
+
+Lists! Combine vectors of different length and type.
+
+```{r}
+urchins <- list("blue",c(1,2,3),c("a cat","a dog"),5L)
+urchins ## double square bracket show element of this list
+## can access different components of list
+ex2<-urchins[[3]] ## stores as character vector, maintains og data structure
+ex1<-urchins[3] ## stores as list, happens to have one element
+
+class(ex2)
+class(ex1)
+
+
+```
+
+Make a named list
+
+```{r}
+tacos<- list(topping = c("onion","cilantro","guacamole"),
+             filling = c("beans","meat","veggies"),
+             price = c(6.75, 8.25, 9.50))
+
+tacos
+
+## indexing list elements by name
+tacos$filling
+
+
+## parsenumber only pull out numeric piece 
+
+??class
+```
+
+```{r}
+my_list <- list(cats = c(1,2,3), dogs = c(10,104,12))
+
+```
+
+The second value of dogs is `r my_list$dogs[2]`.
+
+Dataframe: list of vectors of same length
+
+```{r}
+## make vectors
+topping <- c("onion","cilantro","guacamole")
+filling <- c("beans","meat","veggies")
+price <- c(6.75, 8.25, 9.50)
+
+df_ex_1 <- data.frame(topping,filling,price)
+
+class(df_ex_1)
+
+df_ex_2 <- data.frame(topping = c("onion","salsa","guacamole"),
+                      filling = c("beans","cheese","veggies"),
+                      price = c(6.50, 8.75, 9.60))
+
+library(tidyverse)
+
+df_ex_3 <- tribble(
+ ~topping, ~filling, ~price,
+ "avocado","steak",13.25,
+ "radish", "fish", 10.40,
+ "salsa", "veggies", 9.75)
+
+## indexing
+df_ex_3$price[3]
+
+
+```
